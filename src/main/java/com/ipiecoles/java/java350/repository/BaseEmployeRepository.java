@@ -32,7 +32,7 @@ public interface BaseEmployeRepository<T extends Employe> extends PagingAndSorti
     @Query(value = "SELECT * FROM Employe WHERE salaire > (SELECT avg(e2.salaire) FROM Employe e2)", nativeQuery = true)
     List<T> findEmployePlusRiches();
 
-    public default Integer test(){
+    public default void test(){
         throw new EntityNotFoundException("Exception");
     }
 }

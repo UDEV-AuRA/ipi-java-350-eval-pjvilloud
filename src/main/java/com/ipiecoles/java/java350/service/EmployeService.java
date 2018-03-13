@@ -44,6 +44,7 @@ public class EmployeService {
     }
 
     public Employe findByMatricule(String matricule) {
+        this.employeRepository.test();
         Employe employe = this.employeRepository.findByMatricule(matricule);
         if(employe == null){
             throw new EntityNotFoundException("Impossible de trouver l'employé de matricule " + matricule);
@@ -51,7 +52,9 @@ public class EmployeService {
         return employe;
     }
 
-    public Integer testService(){
+
+
+    /*public Integer testService(){
         return employeRepository.test();
-    }
+    }*/
 }

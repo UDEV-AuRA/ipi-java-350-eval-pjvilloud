@@ -41,7 +41,7 @@ public class ManagerService {
     public Technicien addTechniciens(Long idManager, String matricule) {
         Manager m = managerRepository.findOneWithEquipeById(idManager);
         if(m == null){
-            throw new EntityNotFoundException("Impossible de trouver le manager d'identifiant " + idManager);
+                throw new EntityNotFoundException("Impossible de trouver le manager d'identifiant " + idManager);
         }
         Technicien t = technicienRepository.findByMatricule(matricule);
         if(t == null){
